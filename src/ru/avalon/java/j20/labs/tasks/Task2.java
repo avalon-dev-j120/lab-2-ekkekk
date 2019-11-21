@@ -3,7 +3,9 @@ package ru.avalon.java.j20.labs.tasks;
 import ru.avalon.java.j20.labs.Task;
 
 import java.io.File;
+import java.io.FileReader;
 import java.io.IOException;
+import java.io.Reader;
 
 /**
  * Задание №2
@@ -53,8 +55,17 @@ public class Task2 implements Task {
      * @return содержимое файла в виде текста.
      * @throws IOException в случае ошибок ввода-вывода.
      */
-    private String read(File file) throws IOException {
-        throw new UnsupportedOperationException("Not implement yet!");
+    
+    
+    private String read(File input) throws IOException {
+        char symbol2;
+        Reader symbol = new FileReader(input);  
+        int i;
+        i = 4024; 
+        while (i != -1){(--i; symbol = symbol.read(i);
+         StringBuilder symbol2 = new StringBuilder(input);}
+        FileReader.close();
+        return FileReader.toString());
     }
 
     /**
