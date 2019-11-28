@@ -39,7 +39,7 @@ public class Task3 implements Task {
          *
          * 3. С использованием отладчика проверить корректность работы программы.
          */
-    }
+    
 
     /**
      * Выполняет чтение указанного файла в коллекцию строк.
@@ -69,3 +69,4 @@ public class Task3 implements Task {
         throw new UnsupportedOperationException("Not implemented yet!");
     }
 }
+
