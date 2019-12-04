@@ -40,8 +40,10 @@ public class Task5 implements Task {
      * @param path путь к файлу ресурсов
      * @return новый экземпляр типа {@link ResourceBundle}
      */
-    private ResourceBundle read(String path) {
-        throw new UnsupportedOperationException("Not implement yet!");
+    private ResourceBundle read(String path) throws IOException {
+       ResourceBundle bundle =  ResourceBundle.getBundle(path);
+       return bundle;
+               
     }
 
     /**
@@ -51,6 +53,7 @@ public class Task5 implements Task {
      * @return новый экземпляр типа {@link ResourceBundle}
      */
     private ResourceBundle read(String path, Locale locale) {
-        throw new UnsupportedOperationException("Not implement yet!");
+       ResourceBundle bundle =  ResourceBundle.getBundle(path, locale);
+       return bundle;
     }
 }

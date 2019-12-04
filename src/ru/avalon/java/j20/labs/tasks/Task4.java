@@ -1,9 +1,11 @@
 package ru.avalon.java.j20.labs.tasks;
 
-import ru.avalon.java.j20.labs.Task;
-
+import java.io.FileInputStream;
 import java.io.IOException;
 import java.util.Properties;
+import java.util.logging.Level;
+import java.util.logging.Logger;
+import ru.avalon.java.j20.labs.Task;
 
 /**
  * Задание №4
@@ -11,13 +13,14 @@ import java.util.Properties;
  * <p>Тема: "Потоковый ввод-вывод. Чтение файлов конфигурации".
  */
 public class Task4 implements Task {
+    private String PATH_TO_PROPERTIES;
 
     /**
      * {@inheritDoc}
      */
     @Override
     public void run() throws IOException {
-        Properties properties = read("resources/database");
+        Properties properties = read("resources/database");}
 
         /*
          * TODO(Студент): Выполнить задание №4
@@ -26,7 +29,7 @@ public class Task4 implements Task {
          *
          * 2. С использованием отладчика проверить корректность работы программы.
          */
-    }
+    
 
     /**
      * Выполняет чтение файла конфигураций описанного
@@ -36,6 +39,21 @@ public class Task4 implements Task {
      * @return новый экземпляр типа {@link Properties}
      */
     private Properties read(String path) {
-        throw new UnsupportedOperationException("Not implement yet!");
-    }
+        throw new UnsupportedOperationException("Not implement yet!");}
+             
+                      
+FileInputStream fileInputStream;
+     Properties properties = new Properties(); {
+ 
+       
+        try {
+            fileInputStream = new FileInputStream(PATH_TO_PROPERTIES);
+            properties.load(fileInputStream);
+        } catch (IOException ex) {
+            Logger.getLogger(Task4.class.getName()).log(Level.SEVERE, null, ex);
+        }
+           
+             
 }
+}
+       

@@ -1,9 +1,12 @@
 package ru.avalon.java.j20.labs.tasks;
 
-import ru.avalon.java.j20.labs.Task;
-
 import java.io.File;
+import java.io.FileNotFoundException;
+import java.io.FileReader;
+import java.io.FileWriter;
 import java.io.IOException;
+import java.io.Reader;
+import ru.avalon.java.j20.labs.Task;
 
 /**
  * Задание №2
@@ -21,7 +24,7 @@ public class Task2 implements Task {
         File input = new File("assets/countries.txt");
         File output = new File("countries_text_mode_output.txt");
         String text = read(input);
-        write(output, text);
+        //write(output, text);
 
         /*
          * TODO(Студент): Выполнить задание №2
@@ -41,8 +44,7 @@ public class Task2 implements Task {
          *
          * 3. С использованием отладчика проверить корректность работы программы.
          */
-    }
-
+    
     /**
      * Выполняет чтение указанного файла в текстовом режиме.
      *
@@ -53,8 +55,19 @@ public class Task2 implements Task {
      * @return содержимое файла в виде текста.
      * @throws IOException в случае ошибок ввода-вывода.
      */
-    private String read(File file) throws IOException {
-        throw new UnsupportedOperationException("Not implement yet!");
+    }
+    
+    private String read(File input) throws IOException {
+        Reader reader = new FileReader(input);
+        StringBuilder stringBuilder = new StringBuilder();
+        char [] text = new char[1024];
+        int i;
+        i = reader.read(text);
+        while (i != -1) {
+            stringBuilder.append(text);
+            i = reader.read(text);
+        }
+        return stringBuilder.toString();
     }
 
     /**
@@ -65,7 +78,13 @@ public class Task2 implements Task {
      * @param text текст
      * @throws IOException в случае ошибок ввода-вывода.
      */
-    private void write(File file, String text) throws IOException {
-        throw new UnsupportedOperationException("Not implemented yet!");
+    private static void write(File file, String text)throws IOException {
+      file.createNewFile();  
+         
+        try (FileWriter writer = new FileWriter(file)) {
+            writer.write (text);
+        }
+             
+     }
     }
-}
+
